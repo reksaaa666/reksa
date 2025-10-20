@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center, #0a0000, #000);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+section {
+  position: relative;
+  z-index: 2;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glow-text {
+  font-size: 2.8rem;
+  color: #ff3b3b;
+  text-shadow: 0 0 20px #ff3b3b, 0 0 40px #700000;
+  animation: pulse 2.5s infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.3em;
+  color: #ffb3b3;
+}
+
+.desc {
+  margin-top: 0.8em;
+  color: #ccc;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.socials {
+  margin-top: 1.5em;
+}
+
+.social-btn {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #ff3b3b;
+  padding: 10px 18px;
+  margin: 0 6px;
+  border-radius: 25px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.social-btn:hover {
+  background: #ff3b3b;
+  color: #000;
+  box-shadow: 0 0 20px #ff3b3b, 0 0 40px #700000;
+}
+
+.about, .skills, .contact {
+  background: rgba(20, 0, 0, 0.6);
+  margin: 60px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  max-width: 900px;
+  padding: 50px 20px;
+}
+
+.about h2, .skills h2, .contact h2 {
+  color: #ff3b3b;
+  margin-bottom: 20px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #ffb3b3;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  background: #000;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* === Scroll Animation === */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Animasi Glowing Text === */
+@keyframes pulse {
+  0% { text-shadow: 0 0 10px #ff3b3b; }
+  100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff3b3b; }
+}
