@@ -13,50 +13,45 @@ body {
   overflow-x: hidden;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 1;
-}
-
 canvas {
   position: fixed;
   inset: 0;
   z-index: 0;
 }
 
-section {
-  position: relative;
-  z-index: 2;
-  padding: 100px 10%;
-  text-align: center;
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
 }
 
-.intro {
+header, section, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* HERO */
+.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  padding: 0 10%;
 }
 
 .glow-text {
-  font-size: 2.8rem;
+  font-size: 3rem;
   color: #ff3b3b;
-  text-shadow: 0 0 20px #ff3b3b, 0 0 40px #700000;
+  text-shadow: 0 0 20px #ff3b3b, 0 0 50px #800000;
   animation: pulse 2.5s infinite alternate;
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  margin-top: 0.3em;
+.tagline {
   color: #ffb3b3;
-}
-
-.desc {
-  margin-top: 0.8em;
-  color: #ccc;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-top: 10px;
   letter-spacing: 1px;
 }
 
@@ -68,7 +63,7 @@ section {
   text-decoration: none;
   color: #fff;
   border: 1px solid #ff3b3b;
-  padding: 10px 18px;
+  padding: 10px 20px;
   margin: 0 6px;
   border-radius: 25px;
   transition: 0.3s;
@@ -81,41 +76,51 @@ section {
   box-shadow: 0 0 20px #ff3b3b, 0 0 40px #700000;
 }
 
-.about, .skills, .contact {
-  background: rgba(20, 0, 0, 0.6);
-  margin: 60px auto;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+/* SECTIONS */
+.section {
   max-width: 900px;
-  padding: 50px 20px;
+  margin: 80px auto;
+  background: rgba(25, 0, 0, 0.7);
+  padding: 50px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+  text-align: center;
 }
 
-.about h2, .skills h2, .contact h2 {
+.section h2 {
   color: #ff3b3b;
   margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff3b3b;
 }
 
-.skills ul {
-  list-style: none;
-  padding: 0;
+.section p, .skills-list li, .projects-list li {
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
-.skills li {
-  margin: 8px 0;
-  font-size: 1.1rem;
-  color: #ffb3b3;
+/* HOBBY CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #777;
-  background: #000;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+.card {
+  background: rgba(60, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* === Scroll Animation === */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+/* SCROLL ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -127,8 +132,18 @@ footer {
   transform: translateY(0);
 }
 
-/* === Animasi Glowing Text === */
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  color: #777;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* GLOW ANIMATION */
 @keyframes pulse {
-  0% { text-shadow: 0 0 10px #ff3b3b; }
-  100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff3b3b; }
+  0% { text-shadow: 0 0 15px #ff3b3b; }
+  100% { text-shadow: 0 0 40px #ff0000, 0 0 80px #ff3b3b; }
 }
